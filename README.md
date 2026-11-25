@@ -11,10 +11,10 @@
 前提：Node >=22.20.0、npm、可用 Git，以及对本仓库及所选版本的访问权限。在真正的目标项目根目录执行：
 
 ```bash
-npx --yes skills@1.7.6 add "hankroldd/software-project-collaboration#v0.3.0" --skill software-project-collaboration --agent claude-code --agent codex --agent opencode --yes
+npx --yes skills@1.7.6 add "hankroldd/software-project-collaboration#87653ca86071c60f5b50ded469ef63078e19b1cc" --skill software-project-collaboration --agent claude-code --agent codex --agent opencode --yes
 ```
 
-这是一条首次项目安装命令。仓库和 ref 必须已经发布才可联网安装。安装器版本和技能源版本分别固定；需要不可变来源时，将 tag 换成已核对的完整提交 SHA。
+这是一条首次项目安装命令。安装器版本与已公开的技能源提交分别固定。当前内容版本为 0.3.0；上面的完整 SHA 指向该版本的技能内容，主分支的说明性维护不会改变这个安装来源。当前尚未创建 v0.3.0 标签或 GitHub Release。
 
 **已有同名技能先检查。** `--yes` 接受同名覆盖，安装器会重建目标，不自动合并本地修改。默认 Codex 与 OpenCode 共用 `.agents/skills`，Claude 使用 `.claude/skills` 入口；`--copy` 使用独立副本，更新后需核对内容一致性。只需要部分宿主时移除相应 `--agent`，但这不阻止另一兼容宿主读取共享目录。
 

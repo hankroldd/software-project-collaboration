@@ -1,7 +1,7 @@
 # 维护与发布
 
-仓库标识：`hankroldd/software-project-collaboration`；发行 ref 配置：`v0.3.0`；内容版本：`0.3.0`。
-本页说明维护步骤。实际已发布版本、提交与验证结果以远端 ref、release 和该提交的 CI 记录为准；生成此页不会创建远端 ref。
+仓库标识：`hankroldd/software-project-collaboration`；安装来源提交：`87653ca86071c60f5b50ded469ef63078e19b1cc`；内容版本：`0.3.0`。
+本页说明维护步骤。源码已公开，当前使用上述完整提交固定安装；尚未创建 v0.3.0 标签或 GitHub Release。仓库 CI 只执行验证，使用 contents: read。后续标签和 Release 由维护者通过已授权的 GitHub 操作单独创建；生成此页不会创建远端 ref。
 
 ## 首次发布
 
