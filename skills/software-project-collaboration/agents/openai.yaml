@@ -1,0 +1,4 @@
+interface:
+  display_name: 软件项目全栈协作
+  short_description: 按风险组织需求、设计、实现、验收、部署与运维，保留可接续的真实证据
+  default_prompt: 使用 $software-project-collaboration 结合当前仓库和已有约束，完成这项软件开发工作并说明验证结果。

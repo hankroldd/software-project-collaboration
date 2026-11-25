@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "project_name": "{{PROJECT_NAME}}",
+  "stack_profile": "unconfirmed",
+  "docs": {
+    "project": "docs/PROJECT.md",
+    "status": "docs/STATUS.md",
+    "changes": "docs/changes",
+    "verification": "docs/verification",
+    "architecture": "docs/architecture/overview.md",
+    "operations": "docs/operations/runbook.md"
+  },
+  "git": {
+    "base_branch": null,
+    "history_policy": "inherit",
+    "submodule_policy": "inherit"
+  },
+  "commands": {
+    "lint": null,
+    "typecheck": null,
+    "unit": null,
+    "contract": null,
+    "integration": null,
+    "e2e": null,
+    "build": null
+  },
+  "environments": {
+    "development": null,
+    "acceptance": null,
+    "production": null
+  },
+  "delivery": {
+    "target_architectures": [],
+    "extra_services_budget": null,
+    "evidence_max_files": null,
+    "evidence_max_bytes": null
+  },
+  "notes": [
+    "null means unconfirmed, never a passing check.",
+    "Commands should be explicit argv arrays plus cwd and timeout after repository verification.",
+    "This file records engineering facts; it does not grant tool or deployment permissions."
+  ]
+}

@@ -1,0 +1,36 @@
+# 维护与发布
+
+仓库标识：`hankroldd/software-project-collaboration`；发行 ref 配置：`v0.3.0`；内容版本：`0.3.0`。
+本页说明维护步骤。实际已发布版本、提交与验证结果以远端 ref、release 和该提交的 CI 记录为准；生成此页不会创建远端 ref。
+
+## 首次发布
+
+1. 审查完整候选：安装目录、文档、MIT 作者归属、来源声明、脚本和 CI。公共包只含通用方法与合成案例。
+2. 确认仓库归属、名称、可见性和开源许可已被授权。已有公开发布授权有效时直接执行；“考虑发布”本身不足以公开私人内容。
+3. 在仓库根运行结构检查、合成工具测试和实际需要的安装测试，记录环境与限制。不要把计划中的 CI 或宿主验收写成已通过。
+4. 建立受控 Git 历史并推送已授权远端。确认远端 HEAD 等于审查候选，再创建对应 tag/release。建议启用适当的分支和 tag 保护；文件存在不代表规则已经生效。
+5. 从实际发布的完整 SHA 在隔离项目运行 README 安装命令，检查来源、锁、目标目录和文件身份。再分别在需要支持的宿主中验证发现与一个代表任务。
+6. 把验证范围、安装命令、升级影响、已知限制写入 release notes。使用者可以选可读 tag，也可固定完整 SHA。
+
+本仓库不提供自动公开、自动部署或自动提升权限的脚本；维护者可以使用现有 GitHub 流程，不需要再搭建分发服务。
+
+## 后续版本
+
+在公共仓库直接维护一份 `skills/software-project-collaboration` 源。修改 `metadata.version` 与变更说明，核对同名安装覆盖影响。
+
+```bash
+python3 tools/validate_repository.py
+python3 -m unittest discover -s skills/software-project-collaboration/scripts -p "test_*.py" -v
+python3 tools/validate_repository.py --refresh-manifest
+python3 tools/validate_repository.py --check-manifest
+```
+
+清单刷新属于明确的内容维护，不代表新版本验收通过。执行测试后再次改动代码、配置或输入，要判断哪些验证需要重跑。
+
+固定 Git ref 的安装不会自动换到下一版；审查后用 `skills add` 指向新的 ref。回退也使用已知旧 ref，先保留本地定制。多个 harness 共用目录与锁，安装、更新、卸载由一位负责人顺序执行。
+
+## 候选生成器
+
+`prepare_repository.py` 是首次准备或制作独立快照的工具；默认预览，显式 `--apply` 才写入新文件，遇不同既有内容拒绝整个计划。它不会更新正在维护的公共仓库，也不会自动清除额外文件。
+
+模板保存在技能的 `assets/publishing`，只在生成发布候选时读取。它们不是运行技能所需加载的上下文。生成后需要对完整输出做结构、来源和隐私复核，不能只检查 README。

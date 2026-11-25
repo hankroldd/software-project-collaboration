@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "change_id": "CHANGE-0001",
+  "risk": "R2",
+  "base_sha": "",
+  "head_sha": "",
+  "source_state": "dirty",
+  "diff_sha256": null,
+  "environment": {
+    "name": "acceptance",
+    "identity": ""
+  },
+  "required_ac": [
+    "AC-01"
+  ],
+  "required_checks": [
+    "critical-user-path"
+  ],
+  "checks": [
+    {
+      "id": "critical-user-path",
+      "ac": [
+        "AC-01"
+      ],
+      "layer": "real-integration",
+      "status": "NOT_RUN",
+      "head_sha": "",
+      "command": null,
+      "exit_code": null,
+      "summary": "尚未执行，不能视为通过。",
+      "artifacts": [],
+      "collected": null,
+      "executed": null,
+      "skipped": null,
+      "skip_reason": null
+    }
+  ],
+  "verdict": "BLOCKED",
+  "limitations": [
+    "填写真实代码身份、环境与执行结果后再核验。"
+  ]
+}
